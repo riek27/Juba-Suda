@@ -6,7 +6,7 @@
     <title>Contact Us | Quality Hub for Bio-Digester Services</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -17,9 +17,9 @@
                     <i class="fas fa-leaf logo-icon"></i>
                     <div class="logo-text">Quality<span>Hub</span></div>
                 </a>
-                <div class="mobile-menu-btn">
+                <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
                     <i class="fas fa-bars"></i>
-                </div>
+                </button>
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
@@ -96,10 +96,10 @@
                     <div>
                         <h4>Follow Us</h4>
                         <div class="social-icons">
-                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -110,12 +110,12 @@
                     
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Full Name *</label>
+                            <label for="name">Full Name <span style="color: #dc3545;">*</span></label>
                             <input type="text" id="name" class="form-control" placeholder="Your Name" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="phone">Phone Number *</label>
+                            <label for="phone">Phone Number <span style="color: #dc3545;">*</span></label>
                             <input type="tel" id="phone" class="form-control" placeholder="Your Phone Number" required>
                         </div>
                         
@@ -134,15 +134,16 @@
                                 <option value="replacement">Septic Tank Replacement</option>
                                 <option value="consultation">Consultation & Assessment</option>
                                 <option value="maintenance">Maintenance Support</option>
+                                <option value="other">Other Inquiry</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Your Message *</label>
+                            <label for="message">Your Message <span style="color: #dc3545;">*</span></label>
                             <textarea id="message" class="form-control" rows="5" placeholder="Tell us about your project or inquiry" required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-block">Send Message</button>
+                        <button type="submit" class="btn btn-block"><i class="fas fa-paper-plane"></i> Send Message</button>
                     </form>
                 </div>
             </div>
@@ -150,11 +151,13 @@
             <!-- Map Section -->
             <div class="map-container">
                 <div class="map-placeholder">
-                    <div class="text-center">
-                        <i class="fas fa-map-marker-alt" style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary-green);"></i>
+                    <div class="text-center" style="z-index: 1; position: relative;">
+                        <i class="fas fa-map-marker-alt" style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary);"></i>
                         <h3>Our Location in Juba</h3>
                         <p>Hai Referendum, Juba – South Sudan</p>
-                        <p style="margin-top: 1rem;"><a href="https://maps.google.com/?q=Hai+Referendum,+Juba,+South+Sudan" target="_blank" class="btn btn-outline">Open in Google Maps</a></p>
+                        <div style="margin-top: 1.5rem;">
+                            <a href="https://maps.google.com/?q=Hai+Referendum,+Juba,+South+Sudan" target="_blank" class="btn btn-outline"><i class="fas fa-external-link-alt"></i> Open in Google Maps</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -172,17 +175,37 @@
             <div class="why-choose-grid">
                 <div class="choose-card">
                     <h3>How long does installation take?</h3>
-                    <p>Most residential installations are completed within 3-5 days, depending on site conditions. Commercial projects may take 1-2 weeks.</p>
+                    <p>Most residential installations are completed within 3-5 days, depending on site conditions. Commercial projects may take 1-2 weeks for larger systems.</p>
+                    <a href="services.html" style="color: var(--primary); font-weight: 600; display: inline-block; margin-top: 1rem;">Learn more about installation →</a>
                 </div>
                 
                 <div class="choose-card">
                     <h3>Do you offer financing options?</h3>
                     <p>Yes, we offer flexible payment plans for qualifying customers. Contact us to discuss available financing options for your project.</p>
+                    <a href="contact.html" style="color: var(--primary); font-weight: 600; display: inline-block; margin-top: 1rem;">Contact us about financing →</a>
                 </div>
                 
                 <div class="choose-card">
                     <h3>What maintenance is required?</h3>
                     <p>Bio-digesters require minimal maintenance. We recommend an annual check-up to ensure optimal performance, which we provide as part of our maintenance packages.</p>
+                    <a href="services.html#maintenance" style="color: var(--primary); font-weight: 600; display: inline-block; margin-top: 1rem;">View maintenance packages →</a>
+                </div>
+            </div>
+            
+            <div class="why-choose-grid" style="margin-top: 2rem;">
+                <div class="choose-card">
+                    <h3>Are your systems suitable for all soil types?</h3>
+                    <p>Yes, we design systems specifically for South Sudanese soil conditions. Our site assessment includes soil testing to ensure proper system design.</p>
+                </div>
+                
+                <div class="choose-card">
+                    <h3>What's the lifespan of a bio-digester?</h3>
+                    <p>With proper maintenance, our bio-digester systems typically last 20+ years, significantly longer than traditional septic systems.</p>
+                </div>
+                
+                <div class="choose-card">
+                    <h3>Do you provide emergency services?</h3>
+                    <p>Yes, we offer emergency response services for system failures or urgent sanitation issues. Call our emergency line for immediate assistance.</p>
                 </div>
             </div>
         </div>
@@ -196,13 +219,69 @@
                     <h2>Emergency Service Available</h2>
                     <p>For urgent sanitation issues or system failures, we offer emergency response services. Our team is available to address critical situations promptly.</p>
                     <p><strong>Emergency Contact:</strong> Call us directly at 0925 939 325 for immediate assistance with sanitation emergencies.</p>
-                    <div style="margin-top: 2rem;">
-                        <a href="tel:+0925939325" class="btn btn-accent"><i class="fas fa-phone"></i> Emergency Call</a>
+                    <div style="margin-top: 2.5rem;">
+                        <a href="tel:+0925939325" class="btn btn-emergency"><i class="fas fa-phone"></i> Emergency Call</a>
+                        <a href="services.html" class="btn btn-cta-outline" style="margin-left: 1rem;"><i class="fas fa-tools"></i> Maintenance Services</a>
                     </div>
                 </div>
                 <div class="about-image">
-                    <div style="height: 250px; border-radius: var(--border-radius); background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;"></div>
+                    <div style="height: 280px; border-radius: var(--border-radius); background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;"></div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Contact -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Team Contacts</h2>
+                <p>Reach out to specific departments for faster assistance</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-sales"></i>
+                    <h3>Sales Department</h3>
+                    <p>For new installations, quotes, and service inquiries</p>
+                    <p style="margin-top: 1rem; font-weight: 600; color: var(--primary);">sales@qualityhub.com</p>
+                    <a href="mailto:sales@qualityhub.com" class="btn btn-outline" style="margin-top: 1rem; width: 100%;">Email Sales</a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Support Department</h3>
+                    <p>For technical support, maintenance, and troubleshooting</p>
+                    <p style="margin-top: 1rem; font-weight: 600; color: var(--primary);">support@qualityhub.com</p>
+                    <a href="mailto:support@qualityhub.com" class="btn btn-outline" style="margin-top: 1rem; width: 100%;">Email Support</a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-file-invoice"></i>
+                    <h3>Billing Department</h3>
+                    <p>For invoices, payments, and billing inquiries</p>
+                    <p style="margin-top: 1rem; font-weight: 600; color: var(--primary);">billing@qualityhub.com</p>
+                    <a href="mailto:billing@qualityhub.com" class="btn btn-outline" style="margin-top: 1rem; width: 100%;">Email Billing</a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Partnerships</h3>
+                    <p>For business partnerships and collaboration inquiries</p>
+                    <p style="margin-top: 1rem; font-weight: 600; color: var(--primary);">partners@qualityhub.com</p>
+                    <a href="mailto:partners@qualityhub.com" class="btn btn-outline" style="margin-top: 1rem; width: 100%;">Email Partners</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 style="color: white; margin-bottom: 1rem;">Ready to Get Started?</h2>
+                <p style="max-width: 700px; margin: 0 auto 2.5rem; font-size: 1.2rem;">Contact us today to schedule a free consultation and site assessment. Let's work together to create a sustainable sanitation solution for your home or business.</p>
+                <div style="display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="tel:+0925939325" class="btn btn-accent"><i class="fas fa-phone-alt"></i> Call Now: 0925 939 325</a>
+                    <a href="mailto:info@qualityhub.com" class="btn btn-cta-outline"><i class="fas fa-envelope"></i> Email Us</a>
+                </div>
+                <p style="margin-top: 2rem; opacity: 0.8; font-size: 0.95rem;">We typically respond to inquiries within 2 hours during business hours.</p>
             </div>
         </div>
     </section>
@@ -213,22 +292,22 @@
             <div class="footer-container">
                 <div class="footer-about">
                     <div class="footer-logo">Quality<span>Hub</span></div>
-                    <p>Leading provider of premium bio-digester services in South Sudan, committed to sustainable sanitation and environmental protection.</p>
+                    <p>Leading provider of premium bio-digester services in South Sudan, committed to sustainable sanitation and environmental protection for a cleaner future.</p>
                     <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
@@ -237,6 +316,7 @@
                         <li><i class="fas fa-map-marker-alt"></i> Hai Referendum, Juba – South Sudan</li>
                         <li><i class="fas fa-phone-alt"></i> 0925 939 325</li>
                         <li><i class="fas fa-envelope"></i> info@qualityhub.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</li>
                     </ul>
                 </div>
             </div>
