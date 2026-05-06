@@ -3,263 +3,3623 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quality Hub for Bio-Digester Services | Juba, South Sudan</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Nyinkuei General Trading Co. Ltd | Your Trusted Multi-Service Partner in South Sudan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a1628;
+            --primary-light: #132744;
+            --primary-mid: #1a3a5c;
+            --accent: #e8870e;
+            --accent-light: #f5a623;
+            --accent-glow: rgba(232, 135, 14, 0.3);
+            --green: #2ecc71;
+            --green-dark: #27ae60;
+            --white: #ffffff;
+            --light: #f4f6f9;
+            --light-gray: #e8ecf1;
+            --gray: #8892a0;
+            --dark-gray: #4a5568;
+            --text: #2d3748;
+            --shadow: 0 4px 30px rgba(10, 22, 40, 0.12);
+            --shadow-lg: 0 20px 60px rgba(10, 22, 40, 0.18);
+            --shadow-accent: 0 8px 30px rgba(232, 135, 14, 0.35);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* ===== PRELOADER ===== */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .preloader-inner {
+            text-align: center;
+        }
+
+        .preloader-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 30px;
+        }
+
+        .preloader-logo span {
+            color: var(--accent);
+        }
+
+        .preloader-bar {
+            width: 200px;
+            height: 3px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .preloader-bar::after {
+            content: '';
+            display: block;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            border-radius: 10px;
+            animation: preloaderSlide 1.2s ease-in-out infinite;
+        }
+
+        @keyframes preloaderSlide {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(350%); }
+        }
+
+        /* ===== CURSOR ===== */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99998;
+            transition: transform 0.1s ease;
+        }
+
+        .cursor-ring {
+            width: 35px;
+            height: 35px;
+            border: 2px solid rgba(232, 135, 14, 0.4);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 99997;
+            transition: all 0.15s ease;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            padding: 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 22, 40, 0.97);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+        }
+
+        .nav-top-bar {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            padding: 8px 0;
+            font-size: 0.85rem;
+        }
+
+        .nav-top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-top-bar a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-top-bar .top-contact {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-main {
+            padding: 15px 0;
+        }
+
+        .nav-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            font-size: 1.4rem;
+            color: var(--white);
+            box-shadow: var(--shadow-accent);
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        .logo-text small {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 400;
+            color: var(--accent-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--white);
+            background: rgba(232, 135, 14, 0.15);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 10px;
+        }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-accent);
+            transition: var(--transition);
+        }
+
+        .nav-phone:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(232, 135, 14, 0.5);
+        }
+
+        .nav-phone i {
+            font-size: 1rem;
+            animation: phoneRing 2s ease-in-out infinite;
+        }
+
+        @keyframes phoneRing {
+            0%, 100% { transform: rotate(0); }
+            10% { transform: rotate(15deg); }
+            20% { transform: rotate(-15deg); }
+            30% { transform: rotate(10deg); }
+            40% { transform: rotate(0); }
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10001;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 2.5px;
+            background: var(--white);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: var(--white);
+            box-shadow: var(--shadow-accent);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(232, 135, 14, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-accent);
+        }
+
+        .btn-dark {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-dark:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ===== SECTION STYLES ===== */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(232, 135, 14, 0.1);
+            color: var(--accent);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .section-badge i {
+            font-size: 0.7rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, var(--primary-mid) 100%);
+        }
+
+        .hero-bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image: 
+                radial-gradient(circle at 20% 50%, var(--accent) 1px, transparent 1px),
+                radial-gradient(circle at 80% 20%, var(--accent) 1px, transparent 1px),
+                radial-gradient(circle at 40% 80%, var(--accent) 1px, transparent 1px);
+            background-size: 60px 60px, 80px 80px, 100px 100px;
+        }
+
+        .hero-gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+        }
+
+        .hero-gradient-orb:nth-child(1) {
+            width: 500px;
+            height: 500px;
+            background: var(--accent);
+            top: -100px;
+            right: -100px;
+        }
+
+        .hero-gradient-orb:nth-child(2) {
+            width: 400px;
+            height: 400px;
+            background: var(--green);
+            bottom: -150px;
+            left: -100px;
+        }
+
+        .hero-gradient-orb:nth-child(3) {
+            width: 300px;
+            height: 300px;
+            background: var(--accent-light);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding-top: 120px;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(232, 135, 14, 0.15);
+            border: 1px solid rgba(232, 135, 14, 0.3);
+            color: var(--accent-light);
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.15;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 35px;
+            max-width: 520px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 5px;
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .hero-card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .hero-card {
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius);
+            padding: 30px 25px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .hero-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+            border-color: rgba(232, 135, 14, 0.3);
+        }
+
+        .hero-card:nth-child(2) {
+            margin-top: 30px;
+        }
+
+        .hero-card:nth-child(3) {
+            margin-top: -30px;
+        }
+
+        .hero-card-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.3rem;
+            color: var(--white);
+        }
+
+        .hero-card h4 {
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .hero-card p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== SERVICES OVERVIEW ===== */
+        .services-overview {
+            background: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(232, 135, 14, 0.1);
+        }
+
+        .service-card-icon {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, rgba(232, 135, 14, 0.1), rgba(245, 166, 35, 0.05));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-card-icon {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .service-card .learn-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .service-card .learn-more:hover {
+            gap: 12px;
+        }
+
+        /* ===== WHY CHOOSE US ===== */
+        .why-us {
+            background: var(--white);
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .why-us-content .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            padding: 20px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            background: var(--light);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.1rem;
+        }
+
+        .feature-text h4 {
+            font-size: 1.05rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .feature-text p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .why-us-visual {
+            position: relative;
+        }
+
+        .why-us-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-us-image::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: var(--accent);
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.3;
+        }
+
+        .why-us-image .big-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 6rem;
+            font-weight: 900;
+            color: rgba(255,255,255,0.05);
+            position: absolute;
+        }
+
+        .why-us-image .center-icon {
+            font-size: 4rem;
+            color: var(--accent);
+            position: relative;
+            z-index: 2;
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            padding: 15px 20px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-badge:nth-child(2) {
+            top: 30px;
+            right: -20px;
+            animation-delay: 0.5s;
+        }
+
+        .floating-badge:nth-child(3) {
+            bottom: 40px;
+            left: -20px;
+            animation-delay: 1s;
+        }
+
+        .floating-badge .badge-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--green), var(--green-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+
+        .floating-badge .badge-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .floating-badge .badge-text small {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 400;
+            color: var(--gray);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* ===== CTA BANNER ===== */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+            right: -100px;
+            top: -100px;
+        }
+
+        .cta-banner .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .cta-banner p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 30px;
+        }
+
+        .cta-banner .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== ABOUT PAGE ===== */
+        .about-hero {
+            padding-top: 160px;
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: var(--accent);
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.08;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .about-hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .about-content {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-text h2 span {
+            color: var(--accent);
+        }
+
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .about-image-block {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, var(--primary-mid), var(--primary));
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .about-image i {
+            font-size: 5rem;
+            color: var(--accent);
+            opacity: 0.5;
+        }
+
+        .about-image .experience-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: var(--white);
+            padding: 25px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow-accent);
+        }
+
+        .experience-badge .number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .experience-badge .label {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Mission Vision Values */
+        .mvv-section {
+            background: var(--light);
+        }
+
+        .mvv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .mvv-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mvv-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .mvv-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .mvv-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(232, 135, 14, 0.1), rgba(245, 166, 35, 0.05));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.6rem;
+            color: var(--accent);
+        }
+
+        .mvv-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .mvv-card p {
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+
+        /* Core Values */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .value-item i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .value-item h4 {
+            font-size: 1rem;
+            color: var(--primary);
+        }
+
+        /* ===== SERVICES PAGE ===== */
+        .services-hero {
+            padding-top: 160px;
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: var(--accent);
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.08;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .services-hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .services-hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .service-group {
+            margin-bottom: 60px;
+        }
+
+        .service-group-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .service-group-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .service-group-header h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+
+        .service-group-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .service-item {
+            background: var(--white);
+            border: 1px solid var(--light-gray);
+            border-radius: var(--radius-sm);
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: var(--transition);
+        }
+
+        .service-item:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow);
+            transform: translateY(-3px);
+        }
+
+        .service-item-icon {
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
+            background: rgba(232, 135, 14, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+        }
+
+        .service-item h4 {
+            font-size: 0.95rem;
+            color: var(--primary);
+            margin-bottom: 3px;
+        }
+
+        .service-item p {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        /* ===== PROJECTS PAGE ===== */
+        .projects-hero {
+            padding-top: 160px;
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .projects-hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .projects-hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-image {
+            height: 220px;
+            background: linear-gradient(135deg, var(--primary-mid), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image i {
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.4;
+        }
+
+        .project-image .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(10, 22, 40, 0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .project-overlay .tag {
+            background: var(--accent);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .project-info p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* ===== PRODUCTS PAGE ===== */
+        .products-hero {
+            padding-top: 160px;
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .products-hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .products-hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(232, 135, 14, 0.2);
+        }
+
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(232, 135, 14, 0.1), rgba(245, 166, 35, 0.05));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-icon {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: var(--white);
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .product-card h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .product-card p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        /* ===== CAREERS PAGE ===== */
+        .careers-hero {
+            padding-top: 160px;
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .careers-hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .careers-hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .careers-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .career-benefits {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .career-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: var(--light);
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        .career-benefits li i {
+            color: var(--green);
+            font-size: 1rem;
+        }
+
+        .career-form {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .career-form h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        /* ===== CONTACT PAGE ===== */
+        .contact-hero {
+            padding-top: 160px;
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .contact-hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+        }
+
+        .contact-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-info-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: var(--transition);
+        }
+
+        .contact-info-card:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-info-icon {
+            width: 55px;
+            height: 55px;
+            min-width: 55px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .contact-info-card h4 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 3px;
+        }
+
+        .contact-info-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .contact-info-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-form-wrapper {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-form-wrapper h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        /* ===== FORMS ===== */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--light-gray);
+            border-radius: var(--radius-sm);
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text);
+            transition: var(--transition);
+            background: var(--light);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(232, 135, 14, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        select.form-control {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238892a0' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            padding: 80px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-about .logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-about p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 42px;
+            height: 42px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.6);
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .footer h4 {
+            color: var(--white);
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 10px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact-item i {
+            color: var(--accent);
+            margin-top: 4px;
+            min-width: 16px;
+        }
+
+        .footer-contact-item span {
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            padding: 25px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9990;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+        }
+
+        .whatsapp-tooltip {
+            background: var(--white);
+            color: var(--text);
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .whatsapp-btn {
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.6rem;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            text-decoration: none;
+            animation: whatsappPulse 2s ease-in-out infinite;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+        }
+
+        @keyframes whatsappPulse {
+            0%, 100% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4), 0 0 0 15px rgba(37, 211, 102, 0.1); }
+        }
+
+        /* ===== CALL FLOAT ===== */
+        .call-float {
+            position: fixed;
+            bottom: 100px;
+            right: 35px;
+            z-index: 9990;
+        }
+
+        .call-btn {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.3rem;
+            box-shadow: var(--shadow-accent);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .call-btn:hover {
+            transform: scale(1.1) rotate(15deg);
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 9990;
+            border: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* ===== PAGE TRANSITIONS ===== */
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+            animation: pageFadeIn 0.5s ease;
+        }
+
+        @keyframes pageFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+        .reveal-delay-6 { transition-delay: 0.6s; }
+
+        /* ===== COUNTER ANIMATION ===== */
+        .counter-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            padding: 60px 0;
+        }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .counter-item {
+            padding: 20px;
+        }
+
+        .counter-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .counter-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ===== INDUSTRIES ===== */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .industry-card {
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .industry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .industry-card i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .industry-card h4 {
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero p {
+                margin: 0 auto 35px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-us-grid,
+            .about-grid,
+            .contact-grid,
+            .careers-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .mvv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .counter-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-top-bar {
+                display: none;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background: var(--primary);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 100px 30px 30px;
+                gap: 5px;
+                transition: right 0.4s ease;
+                box-shadow: -10px 0 40px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.open {
+                right: 0;
+            }
+
+            .nav-links a {
+                width: 100%;
+                padding: 14px 18px;
+                font-size: 1rem;
+            }
+
+            .nav-phone {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 25px;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .about-hero h1,
+            .services-hero h1,
+            .projects-hero h1,
+            .products-hero h1,
+            .careers-hero h1,
+            .contact-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .cta-banner h2 {
+                font-size: 1.8rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .counter-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .industries-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Mobile overlay */
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Success message */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .form-success.show {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .form-success i {
+            font-size: 3rem;
+            color: var(--green);
+            margin-bottom: 15px;
+        }
+
+        .form-success h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .form-success p {
+            color: var(--gray);
+        }
+
+        /* Capabilities section */
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .capability-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--accent);
+        }
+
+        .capability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .capability-card h4 {
+            font-size: 1.05rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .capability-card p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        @media (max-width: 768px) {
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="index.html" class="logo">
-                    <i class="fas fa-leaf logo-icon"></i>
-                    <div class="logo-text">Quality<span>Hub</span></div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">Nyinkuei<span>.</span></div>
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-top-bar">
+            <div class="container">
+                <div class="top-contact">
+                    <a href="mailto:info@nyinkuei.com"><i class="fas fa-envelope"></i> info@nyinkuei.com</a>
+                    <a href="#"><i class="fas fa-clock"></i> Mon - Sat: 8:00 AM - 6:00 PM</a>
+                </div>
+                <div class="top-contact">
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-main">
+            <div class="container">
+                <a href="#" class="logo" onclick="showPage('home')">
+                    <div class="logo-icon">N</div>
+                    <div class="logo-text">
+                        Nyinkuei
+                        <small>General Trading Co. Ltd</small>
+                    </div>
                 </a>
-                <div class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Advanced Bio-Digester Solutions for a Cleaner South Sudan</h1>
-                <div class="typing-container">
-                    <span class="typing-text" id="typing-text"></span>
-                </div>
-                <p>We provide premium, eco-friendly sanitation solutions using cutting-edge bio-digester technology. Serving Juba and surrounding areas with sustainable waste management systems.</p>
-                <div class="hero-btns">
-                    <a href="contact.html" class="btn">Request Installation</a>
-                    <a href="services.html" class="btn btn-cta-outline">Our Services</a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="active" onclick="showPage('home')">Home</a></li>
+                    <li><a href="#about" onclick="showPage('about')">About</a></li>
+                    <li><a href="#services" onclick="showPage('services')">Services</a></li>
+                    <li><a href="#projects" onclick="showPage('projects')">Projects</a></li>
+                    <li><a href="#products" onclick="showPage('products')">Products</a></li>
+                    <li><a href="#careers" onclick="showPage('careers')">Careers</a></li>
+                    <li><a href="#contact" onclick="showPage('contact')">Contact</a></li>
+                </ul>
+                <a href="tel:0925999091" class="nav-phone">
+                    <i class="fas fa-phone-alt"></i>
+                    0925999091
+                </a>
+                <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </div>
-    </section>
+    </nav>
+    <div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose Bio-Digester Technology</h2>
-                <p>Revolutionary sanitation solutions that are changing lives in South Sudan</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-wind feature-icon"></i>
-                    <h3>No Odor</h3>
-                    <p>Advanced anaerobic digestion eliminates foul smells completely, making it ideal for residential areas.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-recycle feature-icon"></i>
-                    <h3>Eco-Friendly</h3>
-                    <p>Converts waste into usable water and methane gas, reducing environmental pollution significantly.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-truck-loading feature-icon"></i>
-                    <h3>No Emptying</h3>
-                    <p>Self-contained system that doesn't require regular emptying like traditional septic tanks.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-coins feature-icon"></i>
-                    <h3>Cost-Effective</h3>
-                    <p>Long-term savings on maintenance and waste disposal with minimal operational costs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- ==================== HOME PAGE ==================== -->
+    <div class="page-section active" id="page-home">
 
-    <!-- About Section -->
-    <section class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Leading Sanitation Innovation in South Sudan</h2>
-                    <p>Quality Hub for Bio-Digester Services is a premier environmental engineering company based in Juba, South Sudan. Founded with a vision to transform sanitation infrastructure through sustainable technology.</p>
-                    <p>We specialize in advanced bio-digester systems that offer a cleaner, more efficient alternative to traditional septic tanks, improving public health and environmental sustainability.</p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="50">0</span>
-                            <span class="stat-label">Projects Completed</span>
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="hero-bg-pattern"></div>
+            <div class="hero-gradient-orb"></div>
+            <div class="hero-gradient-orb"></div>
+            <div class="hero-gradient-orb"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="dot"></span>
+                        Your Trusted Multi-Service Partner in South Sudan
+                    </div>
+                    <h1>Reliable <span class="highlight">Multi-Service</span> Solutions in South Sudan</h1>
+                    <p>Nyinkuei General Trading Co. Ltd delivers professional services across cleaning, construction, logistics, and industrial supply with a commitment to quality, safety, and efficiency.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary" onclick="showPage('contact')">
+                            <i class="fas fa-file-invoice"></i> Get a Quote
+                        </a>
+                        <a href="tel:0925999091" class="btn btn-secondary">
+                            <i class="fas fa-phone-alt"></i> Call Now
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-number" data-count="150">0</div>
+                            <div class="hero-stat-label">Projects Done</div>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="5">0</span>
-                            <span class="stat-label">Years Experience</span>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number" data-count="50">0</div>
+                            <div class="hero-stat-label">Happy Clients</div>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="100">0</span>
-                            <span class="stat-label">Satisfied Clients</span>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number" data-count="20">0</div>
+                            <div class="hero-stat-label">Services</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number" data-count="5">0</div>
+                            <div class="hero-stat-label">Years Experience</div>
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <div style="height: 400px; border-radius: var(--border-radius); background-image: url('assets/aqua.jpg'); background-size: cover; background-position: center;"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Overview -->
-    <section class="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>Comprehensive bio-digester solutions for residential and commercial needs</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('assets/aquaa.jpg');"></div>
-                    <div class="service-content">
-                        <h3>Bio-Digester Installation</h3>
-                        <p>Professional installation of modern bio-digester systems tailored to your specific needs and property requirements.</p>
-                        <a href="services.html" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('assets/aqual.jpg');"></div>
-                    <div class="service-content">
-                        <h3>Residential Solutions</h3>
-                        <p>Custom-designed bio-digester systems for homes, providing efficient and odor-free waste management solutions.</p>
-                        <a href="services.html" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('assets/aquala.jpg');"></div>
-                    <div class="service-content">
-                        <h3>Commercial Systems</h3>
-                        <p>Large-scale bio-digester installations for businesses, hotels, schools, and industrial facilities.</p>
-                        <a href="services.html" class="btn btn-outline">Learn More</a>
+                <div class="hero-visual">
+                    <div class="hero-card-grid">
+                        <div class="hero-card">
+                            <div class="hero-card-icon"><i class="fas fa-broom"></i></div>
+                            <h4>Cleaning</h4>
+                            <p>Professional & Fumigation</p>
+                        </div>
+                        <div class="hero-card">
+                            <div class="hero-card-icon"><i class="fas fa-hard-hat"></i></div>
+                            <h4>Construction</h4>
+                            <p>Building & Engineering</p>
+                        </div>
+                        <div class="hero-card">
+                            <div class="hero-card-icon"><i class="fas fa-truck"></i></div>
+                            <h4>Logistics</h4>
+                            <p>Transport & Supply</p>
+                        </div>
+                        <div class="hero-card">
+                            <div class="hero-card-icon"><i class="fas fa-oil-can"></i></div>
+                            <h4>Petroleum</h4>
+                            <p>Oil & Gas Services</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Why Choose Bio-Digesters -->
-    <section class="why-choose">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose Bio-Digesters</h2>
-                <p>The superior alternative to traditional septic systems</p>
-            </div>
-            <div class="why-choose-grid">
-                <div class="choose-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Environmental Protection</h3>
-                    <p>Our systems prevent groundwater contamination and reduce methane emissions, contributing to a cleaner environment.</p>
+        <!-- Key Services -->
+        <section class="section services-overview">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-badge"><i class="fas fa-circle"></i> What We Offer</div>
+                    <h2 class="section-title">Our Key <span>Services</span></h2>
+                    <p class="section-subtitle">Comprehensive solutions tailored to meet your business and personal needs across South Sudan.</p>
                 </div>
-                <div class="choose-card">
-                    <i class="fas fa-water"></i>
-                    <h3>Water Conservation</h3>
-                    <p>Bio-digesters produce treated water that can be safely used for irrigation, reducing water consumption.</p>
-                </div>
-                <div class="choose-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Energy Production</h3>
-                    <p>Generate biogas that can be used for cooking or heating, providing an additional energy source.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust Section -->
-    <section class="trust-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Trust Quality Hub</h2>
-                <p>Our commitment to excellence in every project</p>
-            </div>
-            <div class="trust-grid">
-                <div class="trust-card">
-                    <i class="fas fa-award"></i>
-                    <h3>Proven Experience</h3>
-                    <p>With over 5 years of specialized experience, we've successfully implemented bio-digester systems across South Sudan.</p>
-                </div>
-                <div class="trust-card">
-                    <i class="fas fa-leaf"></i>
-                    <h3>Sustainability Focus</h3>
-                    <p>We're committed to eco-friendly solutions that protect our environment while serving community needs.</p>
-                </div>
-                <div class="trust-card">
-                    <i class="fas fa-tools"></i>
-                    <h3>Quality Workmanship</h3>
-                    <p>Our certified technicians ensure every installation meets the highest standards of quality and durability.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Start Your Bio-Digester Project Today</h2>
-                    <p>Join hundreds of satisfied clients who have transformed their sanitation systems with our advanced bio-digester technology. Get a free consultation and quote for your project.</p>
-                    <div style="margin-top: 2rem;">
-                        <a href="contact.html" class="btn" style="margin-right: 1rem;">Get Started</a>
-                        <a href="tel:+0925939325" class="btn btn-outline"><i class="fas fa-phone"></i> Call Us Now</a>
+                <div class="services-grid">
+                    <div class="service-card reveal reveal-delay-1">
+                        <div class="service-card-icon"><i class="fas fa-broom"></i></div>
+                        <h3>Cleaning & Fumigation</h3>
+                        <p>Professional cleaning and fumigation services for residential, commercial, and industrial spaces.</p>
+                        <a href="#services" class="learn-more" onclick="showPage('services')">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card reveal reveal-delay-2">
+                        <div class="service-card-icon"><i class="fas fa-hard-hat"></i></div>
+                        <h3>Construction Services</h3>
+                        <p>Quality construction, renovation, and building services delivered with precision and expertise.</p>
+                        <a href="#services" class="learn-more" onclick="showPage('services')">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card reveal reveal-delay-3">
+                        <div class="service-card-icon"><i class="fas fa-truck-moving"></i></div>
+                        <h3>Transport & Logistics</h3>
+                        <p>Reliable transportation and logistics solutions for goods and materials across South Sudan.</p>
+                        <a href="#services" class="learn-more" onclick="showPage('services')">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card reveal reveal-delay-4">
+                        <div class="service-card-icon"><i class="fas fa-oil-can"></i></div>
+                        <h3>Petroleum & Gas Services</h3>
+                        <p>Specialized petroleum and gas industry support services with strict safety compliance.</p>
+                        <a href="#services" class="learn-more" onclick="showPage('services')">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card reveal reveal-delay-5">
+                        <div class="service-card-icon"><i class="fas fa-water"></i></div>
+                        <h3>Water & Sewage Management</h3>
+                        <p>Efficient water treatment and sewage management solutions for communities and businesses.</p>
+                        <a href="#services" class="learn-more" onclick="showPage('services')">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card reveal reveal-delay-6">
+                        <div class="service-card-icon"><i class="fas fa-money-bill-transfer"></i></div>
+                        <h3>Money Transfer & Exchange</h3>
+                        <p>Fast and secure money transfer and currency exchange services for individuals and businesses.</p>
+                        <a href="#services" class="learn-more" onclick="showPage('services')">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="about-image">
-                    <div style="height: 300px; border-radius: var(--border-radius); background-image: url('assets/aquali.jpg'); background-size: cover; background-position: center;"></div>
+            </div>
+        </section>
+
+        <!-- Counter Section -->
+        <section class="counter-section">
+            <div class="container">
+                <div class="counter-grid">
+                    <div class="counter-item reveal">
+                        <div class="counter-number" data-target="150">0</div>
+                        <div class="counter-label">Projects Completed</div>
+                    </div>
+                    <div class="counter-item reveal reveal-delay-1">
+                        <div class="counter-number" data-target="50">0</div>
+                        <div class="counter-label">Satisfied Clients</div>
+                    </div>
+                    <div class="counter-item reveal reveal-delay-2">
+                        <div class="counter-number" data-target="20">0</div>
+                        <div class="counter-label">Service Categories</div>
+                    </div>
+                    <div class="counter-item reveal reveal-delay-3">
+                        <div class="counter-number" data-target="100">0</div>
+                        <div class="counter-label">Team Members</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
+        <!-- Why Choose Us -->
+        <section class="section why-us">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-badge"><i class="fas fa-circle"></i> Why Choose Us</div>
+                    <h2 class="section-title">Why <span>Nyinkuei</span> Stands Out</h2>
+                    <p class="section-subtitle">We combine expertise, reliability, and dedication to deliver exceptional results every time.</p>
+                </div>
+                <div class="why-us-grid">
+                    <div class="why-us-content">
+                        <ul class="feature-list">
+                            <li class="feature-item reveal">
+                                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                                <div class="feature-text">
+                                    <h4>Reliable & Fast Service</h4>
+                                    <p>We deliver on time, every time. Our teams are trained for rapid deployment without compromising quality.</p>
+                                </div>
+                            </li>
+                            <li class="feature-item reveal reveal-delay-1">
+                                <div class="feature-icon"><i class="fas fa-users"></i></div>
+                                <div class="feature-text">
+                                    <h4>Skilled Workforce</h4>
+                                    <p>Our professionals are experienced, certified, and committed to maintaining the highest industry standards.</p>
+                                </div>
+                            </li>
+                            <li class="feature-item reveal reveal-delay-2">
+                                <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+                                <div class="feature-text">
+                                    <h4>Multi-Industry Expertise</h4>
+                                    <p>From cleaning to construction to petroleum — we bring cross-sector knowledge to every project.</p>
+                                </div>
+                            </li>
+                            <li class="feature-item reveal reveal-delay-3">
+                                <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                                <div class="feature-text">
+                                    <h4>Customer Satisfaction Focus</h4>
+                                    <p>Your satisfaction is our priority. We go the extra mile to exceed expectations on every engagement.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="why-us-visual">
+                        <div class="why-us-image">
+                            <span class="big-text">NGT</span>
+                            <i class="fas fa-building center-icon"></i>
+                            <div class="floating-badge">
+                                <div class="badge-icon"><i class="fas fa-check"></i></div>
+                                <div class="badge-text">
+                                    100%
+                                    <small>Client Satisfaction</small>
+                                </div>
+                            </div>
+                            <div class="floating-badge">
+                                <div class="badge-icon"><i class="fas fa-shield-alt"></i></div>
+                                <div class="badge-text">
+                                    Trusted
+                                    <small>Licensed & Insured</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries We Serve -->
+        <section class="section" style="background: var(--light);">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-badge"><i class="fas fa-circle"></i> Industries We Serve</div>
+                    <h2 class="section-title">Our <span>Industries</span></h2>
+                    <p class="section-subtitle">We proudly serve diverse sectors across South Sudan with tailored solutions.</p>
+                </div>
+                <div class="industries-grid">
+                    <div class="industry-card reveal reveal-delay-1">
+                        <i class="fas fa-home"></i>
+                        <h4>Residential</h4>
+                    </div>
+                    <div class="industry-card reveal reveal-delay-2">
+                        <i class="fas fa-building"></i>
+                        <h4>Commercial</h4>
+                    </div>
+                    <div class="industry-card reveal reveal-delay-3">
+                        <i class="fas fa-industry"></i>
+                        <h4>Industrial</h4>
+                    </div>
+                    <div class="industry-card reveal reveal-delay-4">
+                        <i class="fas fa-hospital"></i>
+                        <h4>Healthcare</h4>
+                    </div>
+                    <div class="industry-card reveal reveal-delay-1">
+                        <i class="fas fa-university"></i>
+                        <h4>Government</h4>
+                    </div>
+                    <div class="industry-card reveal reveal-delay-2">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Education</h4>
+                    </div>
+                    <div class="industry-card reveal reveal-delay-3">
+                        <i class="fas fa-oil-can"></i>
+                        <h4>Oil & Gas</h4>
+                    </div>
+                    <div class="industry-card reveal reveal-delay-4">
+                        <i class="fas fa-seedling"></i>
+                        <h4>Agriculture</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="cta-banner">
+            <div class="container">
+                <h2 class="reveal">Need a Reliable Service Provider?</h2>
+                <p class="reveal reveal-delay-1">Your Trusted Multi-Service Partner in South Sudan is just a call away.</p>
+                <div class="cta-buttons reveal reveal-delay-2">
+                    <a href="tel:0925999091" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call 0925999091</a>
+                    <a href="#contact" class="btn btn-secondary" onclick="showPage('contact')"><i class="fas fa-envelope"></i> Send a Message</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== ABOUT PAGE ==================== -->
+    <div class="page-section" id="page-about">
+        <section class="about-hero">
+            <div class="container">
+                <div class="section-badge" style="color: var(--accent-light); background: rgba(232,135,14,0.15); border: 1px solid rgba(232,135,14,0.3);"><i class="fas fa-circle"></i> About Us</div>
+                <h1>About <span style="color: var(--accent);">Nyinkuei</span></h1>
+                <p>Your Trusted Multi-Service Partner in South Sudan — delivering excellence across industries.</p>
+            </div>
+        </section>
+
+        <section class="section about-content">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <h2>Who <span>We Are</span></h2>
+                        <p>Nyinkuei General Trading Co. Ltd is a diversified service company based in Juba, South Sudan, offering a wide range of solutions across multiple industries including cleaning, construction, logistics, and general trading.</p>
+                        <p>Founded with a vision to become a leading multi-service company in South Sudan, we have grown to serve hundreds of clients across residential, commercial, and industrial sectors.</p>
+                        <p>Our commitment to quality, safety, and efficiency has earned us the trust of businesses and institutions throughout the region.</p>
+                        <a href="#services" class="btn btn-primary" onclick="showPage('services')" style="margin-top: 20px;">
+                            <i class="fas fa-arrow-right"></i> Explore Our Services
+                        </a>
+                    </div>
+                    <div class="about-image-block reveal reveal-delay-2">
+                        <div class="about-image">
+                            <i class="fas fa-city"></i>
+                            <div class="experience-badge">
+                                <div class="number">5+</div>
+                                <div class="label">Years of<br>Excellence</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section mvv-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-badge"><i class="fas fa-circle"></i> Our Foundation</div>
+                    <h2 class="section-title">Mission, Vision & <span>Values</span></h2>
+                </div>
+                <div class="mvv-grid">
+                    <div class="mvv-card reveal reveal-delay-1">
+                        <div class="mvv-icon"><i class="fas fa-bullseye"></i></div>
+                        <h3>Our Mission</h3>
+                        <p>To deliver high-quality, reliable, and efficient services that meet the needs of individuals, businesses, and institutions across South Sudan.</p>
+                    </div>
+                    <div class="mvv-card reveal reveal-delay-2">
+                        <div class="mvv-icon"><i class="fas fa-eye"></i></div>
+                        <h3>Our Vision</h3>
+                        <p>To become a leading multi-service company in South Sudan known for excellence, innovation, and trust in every sector we serve.</p>
+                    </div>
+                    <div class="mvv-card reveal reveal-delay-3">
+                        <div class="mvv-icon"><i class="fas fa-gem"></i></div>
+                        <h3>Our Values</h3>
+                        <p>Integrity, professionalism, reliability, and customer focus form the backbone of everything we do at Nyinkuei.</p>
+                    </div>
+                </div>
+                <div class="values-grid">
+                    <div class="value-item reveal reveal-delay-1">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Integrity</h4>
+                    </div>
+                    <div class="value-item reveal reveal-delay-2">
+                        <i class="fas fa-award"></i>
+                        <h4>Professionalism</h4>
+                    </div>
+                    <div class="value-item reveal reveal-delay-3">
+                        <i class="fas fa-clock"></i>
+                        <h4>Reliability</h4>
+                    </div>
+                    <div class="value-item reveal reveal-delay-4">
+                        <i class="fas fa-heart"></i>
+                        <h4>Customer Focus</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Capabilities -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-badge"><i class="fas fa-circle"></i> Our Capabilities</div>
+                    <h2 class="section-title">What We <span>Bring</span> to the Table</h2>
+                </div>
+                <div class="capabilities-grid">
+                    <div class="capability-card reveal reveal-delay-1">
+                        <h4><i class="fas fa-tools" style="color: var(--accent); margin-right: 8px;"></i> Modern Equipment</h4>
+                        <p>We invest in the latest tools and equipment to ensure efficient and high-quality service delivery.</p>
+                    </div>
+                    <div class="capability-card reveal reveal-delay-2">
+                        <h4><i class="fas fa-users-cog" style="color: var(--accent); margin-right: 8px;"></i> Expert Teams</h4>
+                        <p>Our trained professionals bring years of experience and dedication to every project we undertake.</p>
+                    </div>
+                    <div class="capability-card reveal reveal-delay-3">
+                        <h4><i class="fas fa-shield-alt" style="color: var(--accent); margin-right: 8px;"></i> Safety First</h4>
+                        <p>Safety is at the core of our operations. We follow strict protocols to protect our teams and clients.</p>
+                    </div>
+                    <div class="capability-card reveal reveal-delay-4">
+                        <h4><i class="fas fa-map-marked-alt" style="color: var(--accent); margin-right: 8px;"></i> Wide Coverage</h4>
+                        <p>We operate across Juba and surrounding areas, with the capacity to scale to any location in South Sudan.</p>
+                    </div>
+                    <div class="capability-card reveal reveal-delay-5">
+                        <h4><i class="fas fa-hand-holding-usd" style="color: var(--accent); margin-right: 8px;"></i> Competitive Pricing</h4>
+                        <p>We offer fair and transparent pricing without compromising on the quality of our services.</p>
+                    </div>
+                    <div class="capability-card reveal reveal-delay-6">
+                        <h4><i class="fas fa-headset" style="color: var(--accent); margin-right: 8px;"></i> 24/7 Support</h4>
+                        <p>Our customer support team is always ready to assist you with inquiries, quotes, and project updates.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== SERVICES PAGE ==================== -->
+    <div class="page-section" id="page-services">
+        <section class="services-hero">
+            <div class="container">
+                <div class="section-badge" style="color: var(--accent-light); background: rgba(232,135,14,0.15); border: 1px solid rgba(232,135,14,0.3);"><i class="fas fa-circle"></i> Our Services</div>
+                <h1>Our <span style="color: var(--accent);">Services</span></h1>
+                <p>Comprehensive, grouped solutions designed to meet every need across South Sudan.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+
+                <!-- Cleaning & Environmental -->
+                <div class="service-group reveal">
+                    <div class="service-group-header">
+                        <div class="service-group-icon"><i class="fas fa-leaf"></i></div>
+                        <h3>Cleaning & Environmental Services</h3>
+                    </div>
+                    <div class="service-group-grid">
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-broom"></i></div>
+                            <div><h4>Cleaning Services</h4><p>Professional cleaning for offices, homes, and commercial spaces</p></div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-spray-can"></i></div>
+                            <div><h4>Fumigation</h4><p>Pest control and fumigation for safe, hygienic environments</p></div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-water"></i></div>
+                            <div><h4>Water & Sewage Management</h4><p>Water treatment and sewage disposal solutions</p></div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-flask"></i></div>
+                            <div><h4>Liquid Detergent Supply</h4><p>Quality liquid detergents for commercial and industrial use</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Construction & Engineering -->
+                <div class="service-group reveal">
+                    <div class="service-group-header">
+                        <div class="service-group-icon"><i class="fas fa-hard-hat"></i></div>
+                        <h3>Construction & Engineering</h3>
+                    </div>
+                    <div class="service-group-grid">
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-building"></i></div>
+                            <div><h4>Construction Services</h4><p>Building, renovation, and infrastructure development</p></div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-key"></i></div>
+                            <div><h4>Buying, Selling & Leasing</h4><p>Property and equipment buying, selling, and leasing</p></div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-oil-can"></i></div>
+                            <div><h4>Petroleum & Gas Services</h4><p>Oil field support and petroleum industry services</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logistics & Transport -->
+                <div class="service-group reveal">
+                    <div class="service-group-header">
+                        <div class="service-group-icon"><i class="fas fa-truck"></i></div>
+                        <h3>Logistics & Transport</h3>
+                    </div>
+                    <div class="service-group-grid">
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-shuttle-van"></i></div>
+                            <div><h4>Transport Services</h4><p>Reliable goods and passenger transportation</p></div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-seedling"></i></div>
+                            <div><h4>Supply of Agricultural Inputs</h4><p>Seeds, fertilizers, and farming equipment supply</p></div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-cogs"></i></div>
+                            <div><h4>Spare Parts Supply</h4><p>Vehicle and machinery spare parts distribution</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business & Financial -->
+                <div class="service-group reveal">
+                    <div class="service-group-header">
+                        <div class="service-group-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Business & Financial Services</h3>
+                    </div>
+                    <div class="service-group-grid">
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-money-bill-transfer"></i></div>
+                            <div><h4>Money Transfer & Exchange</h4><p>Fast and secure money transfer and currency exchange</p></div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                            <div><h4>Money Lending</h4><p>Flexible lending solutions for businesses and individuals</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commercial & Office -->
+                <div class="service-group reveal">
+                    <div class="service-group-header">
+                        <div class="service-group-icon"><i class="fas fa-briefcase"></i></div>
+                        <h3>Commercial & Office Services</h3>
+                    </div>
+                    <div class="service-group-grid">
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-pen-fancy"></i></div>
+                            <div><h4>Stationery Supply</h4><p>Office stationery and supplies delivery</p></div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-chair"></i></div>
+                            <div><h4>Office Furniture</h4><p>Quality office furniture procurement and setup</p></div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-print"></i></div>
+                            <div><h4>General Printing</h4><p>Professional printing services for all needs</p></div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-stethoscope"></i></div>
+                            <div><h4>Medical Equipment Clearing</h4><p>Import clearing and logistics for medical equipment</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lifestyle & Support -->
+                <div class="service-group reveal">
+                    <div class="service-group-header">
+                        <div class="service-group-icon"><i class="fas fa-concierge-bell"></i></div>
+                        <h3>Lifestyle & Support Services</h3>
+                    </div>
+                    <div class="service-group-grid">
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-tshirt"></i></div>
+                            <div><h4>Dry Cleaning</h4><p>Professional dry cleaning and laundry services</p></div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-utensils"></i></div>
+                            <div><h4>Catering Services</h4><p>Event and corporate catering with quality cuisine</p></div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-calendar-check"></i></div>
+                            <div><h4>Event Management</h4><p>Full-service event planning and management</p></div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-item-icon"><i class="fas fa-car"></i></div>
+                            <div><h4>Car Maintenance & Washing</h4><p>Vehicle maintenance, repair, and washing services</p></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Services CTA -->
+        <section class="cta-banner">
+            <div class="container">
+                <h2 class="reveal">Need Any of These Services?</h2>
+                <p class="reveal reveal-delay-1">Get a free quote tailored to your specific needs.</p>
+                <div class="cta-buttons reveal reveal-delay-2">
+                    <a href="tel:0925999091" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call 0925999091</a>
+                    <a href="#contact" class="btn btn-secondary" onclick="showPage('contact')"><i class="fas fa-file-invoice"></i> Request Quote</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== PROJECTS PAGE ==================== -->
+    <div class="page-section" id="page-projects">
+        <section class="projects-hero">
+            <div class="container">
+                <div class="section-badge" style="color: var(--accent-light); background: rgba(232,135,14,0.15); border: 1px solid rgba(232,135,14,0.3);"><i class="fas fa-circle"></i> Our Projects</div>
+                <h1>Our <span style="color: var(--accent);">Projects</span></h1>
+                <p>We have successfully delivered services across various sectors including residential, commercial, and industrial projects.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-badge"><i class="fas fa-circle"></i> Featured Work</div>
+                    <h2 class="section-title">Completed <span>Projects</span></h2>
+                    <p class="section-subtitle">A showcase of our successful project deliveries across multiple sectors.</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card reveal reveal-delay-1">
+                        <div class="project-image">
+                            <i class="fas fa-broom"></i>
+                            <div class="project-overlay">
+                                <span class="tag">Cleaning</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Cleaning Contracts</h3>
+                            <p>Ongoing cleaning contracts for government offices, commercial buildings, and residential complexes in Juba.</p>
+                        </div>
+                    </div>
+                    <div class="project-card reveal reveal-delay-2">
+                        <div class="project-image">
+                            <i class="fas fa-truck"></i>
+                            <div class="project-overlay">
+                                <span class="tag">Logistics</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Transport & Supply Projects</h3>
+                            <p>Large-scale transport and supply operations for construction materials and agricultural inputs across South Sudan.</p>
+                        </div>
+                    </div>
+                    <div class="project-card reveal reveal-delay-3">
+                        <div class="project-image">
+                            <i class="fas fa-hard-hat"></i>
+                            <div class="project-overlay">
+                                <span class="tag">Construction</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Construction Works</h3>
+                            <p>Residential and commercial construction projects including building renovations and infrastructure development.</p>
+                        </div>
+                    </div>
+                    <div class="project-card reveal reveal-delay-4">
+                        <div class="project-image">
+                            <i class="fas fa-calendar-check"></i>
+                            <div class="project-overlay">
+                                <span class="tag">Events</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Event Management</h3>
+                            <p>Successfully managed corporate events, conferences, and private celebrations with full catering and logistics support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <div class="container">
+                <h2 class="reveal">Want to Start a Project With Us?</h2>
+                <p class="reveal reveal-delay-1">Let's discuss how we can bring your vision to life.</p>
+                <div class="cta-buttons reveal reveal-delay-2">
+                    <a href="tel:0925999091" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call 0925999091</a>
+                    <a href="#contact" class="btn btn-secondary" onclick="showPage('contact')"><i class="fas fa-envelope"></i> Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== PRODUCTS PAGE ==================== -->
+    <div class="page-section" id="page-products">
+        <section class="products-hero">
+            <div class="container">
+                <div class="section-badge" style="color: var(--accent-light); background: rgba(232,135,14,0.15); border: 1px solid rgba(232,135,14,0.3);"><i class="fas fa-circle"></i> Our Products</div>
+                <h1>Our <span style="color: var(--accent);">Products</span></h1>
+                <p>Quality products supplied to businesses and institutions across South Sudan.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-badge"><i class="fas fa-circle"></i> Product Categories</div>
+                    <h2 class="section-title">What We <span>Supply</span></h2>
+                    <p class="section-subtitle">From office essentials to industrial supplies — we've got you covered.</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card reveal reveal-delay-1">
+                        <div class="product-icon"><i class="fas fa-pen-fancy"></i></div>
+                        <h3>Office Supplies & Stationery</h3>
+                        <p>Pens, notebooks, files, folders, and all essential office stationery items.</p>
+                        <a href="#contact" class="btn btn-outline" onclick="showPage('contact')" style="padding: 10px 24px; font-size: 0.85rem;">Request Quote</a>
+                    </div>
+                    <div class="product-card reveal reveal-delay-2">
+                        <div class="product-icon"><i class="fas fa-flask"></i></div>
+                        <h3>Cleaning Products</h3>
+                        <p>Liquid detergents, disinfectants, and professional-grade cleaning supplies.</p>
+                        <a href="#contact" class="btn btn-outline" onclick="showPage('contact')" style="padding: 10px 24px; font-size: 0.85rem;">Request Quote</a>
+                    </div>
+                    <div class="product-card reveal reveal-delay-3">
+                        <div class="product-icon"><i class="fas fa-seedling"></i></div>
+                        <h3>Agricultural Inputs</h3>
+                        <p>Seeds, fertilizers, pesticides, and farming tools for agricultural operations.</p>
+                        <a href="#contact" class="btn btn-outline" onclick="showPage('contact')" style="padding: 10px 24px; font-size: 0.85rem;">Request Quote</a>
+                    </div>
+                    <div class="product-card reveal reveal-delay-4">
+                        <div class="product-icon"><i class="fas fa-cogs"></i></div>
+                        <h3>Spare Parts</h3>
+                        <p>Vehicle and machinery spare parts for maintenance and repair needs.</p>
+                        <a href="#contact" class="btn btn-outline" onclick="showPage('contact')" style="padding: 10px 24px; font-size: 0.85rem;">Request Quote</a>
+                    </div>
+                    <div class="product-card reveal reveal-delay-5">
+                        <div class="product-icon"><i class="fas fa-chair"></i></div>
+                        <h3>Office Furniture</h3>
+                        <p>Desks, chairs, cabinets, and complete office furniture solutions.</p>
+                        <a href="#contact" class="btn btn-outline" onclick="showPage('contact')" style="padding: 10px 24px; font-size: 0.85rem;">Request Quote</a>
+                    </div>
+                    <div class="product-card reveal reveal-delay-6">
+                        <div class="product-icon"><i class="fas fa-stethoscope"></i></div>
+                        <h3>Medical Equipment</h3>
+                        <p>Medical equipment clearing and supply for healthcare facilities.</p>
+                        <a href="#contact" class="btn btn-outline" onclick="showPage('contact')" style="padding: 10px 24px; font-size: 0.85rem;">Request Quote</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <div class="container">
+                <h2 class="reveal">Need Bulk Supply?</h2>
+                <p class="reveal reveal-delay-1">Contact us for bulk supply and competitive quotations.</p>
+                <div class="cta-buttons reveal reveal-delay-2">
+                    <a href="tel:0925999091" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call 0925999091</a>
+                    <a href="#contact" class="btn btn-secondary" onclick="showPage('contact')"><i class="fas fa-envelope"></i> Get Quotation</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== CAREERS PAGE ==================== -->
+    <div class="page-section" id="page-careers">
+        <section class="careers-hero">
+            <div class="container">
+                <div class="section-badge" style="color: var(--accent-light); background: rgba(232,135,14,0.15); border: 1px solid rgba(232,135,14,0.3);"><i class="fas fa-circle"></i> Careers</div>
+                <h1>Join Our <span style="color: var(--accent);">Team</span></h1>
+                <p>Join our growing team and be part of a company committed to excellence and service delivery.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="careers-content">
+                    <div class="reveal">
+                        <h2 style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;">Why Work With <span style="color: var(--accent);">Nyinkuei?</span></h2>
+                        <p style="color: var(--gray); margin-bottom: 25px;">We offer a dynamic work environment where your skills are valued and your growth is supported. Be part of a team that's shaping the future of multi-service delivery in South Sudan.</p>
+                        <ul class="career-benefits">
+                            <li><i class="fas fa-check-circle"></i> Competitive salary and benefits package</li>
+                            <li><i class="fas fa-check-circle"></i> Professional development and training</li>
+                            <li><i class="fas fa-check-circle"></i> Supportive and inclusive work culture</li>
+                            <li><i class="fas fa-check-circle"></i> Opportunities for career advancement</li>
+                            <li><i class="fas fa-check-circle"></i> Work on diverse, impactful projects</li>
+                            <li><i class="fas fa-check-circle"></i> Health and wellness benefits</li>
+                        </ul>
+
+                        <div style="margin-top: 30px; padding: 25px; background: var(--light); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);">
+                            <h4 style="color: var(--primary); margin-bottom: 8px;"><i class="fas fa-graduation-cap" style="color: var(--accent); margin-right: 8px;"></i> Internship Opportunities</h4>
+                            <p style="color: var(--gray); font-size: 0.9rem;">We also offer internship programs for students and fresh graduates looking to gain practical experience in a professional environment.</p>
+                        </div>
+                    </div>
+                    <div class="career-form reveal reveal-delay-2">
+                        <h3><i class="fas fa-paper-plane" style="color: var(--accent); margin-right: 8px;"></i> Submit Your CV</h3>
+                        <form id="careerForm" onsubmit="handleCareerSubmit(event)">
+                            <div class="form-group">
+                                <label>Full Name *</label>
+                                <input type="text" class="form-control" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Email Address *</label>
+                                    <input type="email" class="form-control" placeholder="your@email.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number *</label>
+                                    <input type="tel" class="form-control" placeholder="+211 XXX XXX XXX" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Position Applying For</label>
+                                <select class="form-control">
+                                    <option value="">Select a position</option>
+                                    <option>Cleaning Supervisor</option>
+                                    <option>Construction Worker</option>
+                                    <option>Driver / Transport</option>
+                                    <option>Office Administrator</option>
+                                    <option>Accountant</option>
+                                    <option>Sales Representative</option>
+                                    <option>Intern</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Tell Us About Yourself</label>
+                                <textarea class="form-control" placeholder="Briefly describe your experience and qualifications..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                                <i class="fas fa-paper-plane"></i> Submit Application
+                            </button>
+                        </form>
+                        <div class="form-success" id="careerSuccess">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Application Submitted!</h3>
+                            <p>Thank you for your interest. We'll review your application and get back to you soon.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== CONTACT PAGE ==================== -->
+    <div class="page-section" id="page-contact">
+        <section class="contact-hero">
+            <div class="container">
+                <div class="section-badge" style="color: var(--accent-light); background: rgba(232,135,14,0.15); border: 1px solid rgba(232,135,14,0.3);"><i class="fas fa-circle"></i> Contact Us</div>
+                <h1>Get In <span style="color: var(--accent);">Touch</span></h1>
+                <p>We'd love to hear from you. Reach out for quotes, inquiries, or any information you need.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info-cards reveal">
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p><a href="tel:0925999091">0925999091</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <p><a href="https://wa.me/211925999091">Chat with us on WhatsApp</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@nyinkuei.com">info@nyinkuei.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Juba, South Sudan</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4>Working Hours</h4>
+                                <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-wrapper reveal reveal-delay-2">
+                        <h3><i class="fas fa-envelope-open-text" style="color: var(--accent); margin-right: 8px;"></i> Send Us a Message</h3>
+                        <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Your Name *</label>
+                                    <input type="text" class="form-control" placeholder="Enter your name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number *</label>
+                                    <input type="tel" class="form-control" placeholder="+211 XXX XXX XXX" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" class="form-control" placeholder="your@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Service Needed *</label>
+                                <select class="form-control" required>
+                                    <option value="">Select a service</option>
+                                    <option>Cleaning & Fumigation</option>
+                                    <option>Construction Services</option>
+                                    <option>Transport & Logistics</option>
+                                    <option>Petroleum & Gas Services</option>
+                                    <option>Water & Sewage Management</option>
+                                    <option>Money Transfer & Exchange</option>
+                                    <option>Office Supplies & Stationery</option>
+                                    <option>Catering & Event Management</option>
+                                    <option>Car Maintenance & Washing</option>
+                                    <option>Dry Cleaning</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Your Message</label>
+                                <textarea class="form-control" placeholder="Tell us about your needs..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                        <div class="form-success" id="contactSuccess">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Message Sent Successfully!</h3>
+                            <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
         <div class="container">
-            <div class="footer-container">
+            <div class="footer-grid">
                 <div class="footer-about">
-                    <div class="footer-logo">Quality<span>Hub</span></div>
-                    <p>Leading provider of premium bio-digester services in South Sudan, committed to sustainable sanitation and environmental protection.</p>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="logo" onclick="showPage('home')">
+                        <div class="logo-icon">N</div>
+                        <div class="logo-text">
+                            Nyinkuei
+                            <small>General Trading Co. Ltd</small>
+                        </div>
+                    </a>
+                    <p>Your Trusted Multi-Service Partner in South Sudan. We deliver professional services across cleaning, construction, logistics, and industrial supply.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="footer-links">
+                <div>
                     <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                    <ul class="footer-links">
+                        <li><a href="#home" onclick="showPage('home')"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about" onclick="showPage('about')"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#services" onclick="showPage('services')"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#projects" onclick="showPage('projects')"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="#products" onclick="showPage('products')"><i class="fas fa-chevron-right"></i> Products</a></li>
+                        <li><a href="#careers" onclick="showPage('careers')"><i class="fas fa-chevron-right"></i> Careers</a></li>
                     </ul>
                 </div>
-                <div class="footer-contact">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Hai Referendum, Juba – South Sudan</li>
-                        <li><i class="fas fa-phone-alt"></i> 0925 939 325</li>
-                        <li><i class="fas fa-envelope"></i> info@qualityhub.com</li>
+                <div>
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services" onclick="showPage('services')"><i class="fas fa-chevron-right"></i> Cleaning</a></li>
+                        <li><a href="#services" onclick="showPage('services')"><i class="fas fa-chevron-right"></i> Construction</a></li>
+                        <li><a href="#services" onclick="showPage('services')"><i class="fas fa-chevron-right"></i> Logistics</a></li>
+                        <li><a href="#services" onclick="showPage('services')"><i class="fas fa-chevron-right"></i> Petroleum</a></li>
+                        <li><a href="#services" onclick="showPage('services')"><i class="fas fa-chevron-right"></i> Money Transfer</a></li>
+                        <li><a href="#services" onclick="showPage('services')"><i class="fas fa-chevron-right"></i> Catering</a></li>
                     </ul>
+                </div>
+                <div>
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Juba, South Sudan</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span><a href="tel:0925999091" style="color: rgba(255,255,255,0.7); text-decoration: none;">0925999091</a></span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="mailto:info@nyinkuei.com" style="color: rgba(255,255,255,0.7); text-decoration: none;">info@nyinkuei.com</a></span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon - Sat: 8:00 AM - 6:00 PM</span>
+                    </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2026 Quality Hub for Bio-Digester Services. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 <a href="#" onclick="showPage('home')">Nyinkuei General Trading Co. Ltd</a>. All Rights Reserved. | Your Trusted Multi-Service Partner in South Sudan</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- WhatsApp Float -->
+    <div class="whatsapp-float">
+        <div class="whatsapp-tooltip">Chat with us on WhatsApp</div>
+        <a href="https://wa.me/211925999091" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Call Float -->
+    <div class="call-float">
+        <a href="tel:0925999091" class="call-btn">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // ===== PRELOADER =====
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 1500);
+        });
+
+        // ===== CUSTOM CURSOR =====
+        const cursorDot = document.getElementById('cursorDot');
+        const cursorRing = document.getElementById('cursorRing');
+
+        if (window.innerWidth > 768) {
+            document.addEventListener('mousemove', (e) => {
+                cursorDot.style.left = e.clientX - 4 + 'px';
+                cursorDot.style.top = e.clientY - 4 + 'px';
+                cursorRing.style.left = e.clientX - 17.5 + 'px';
+                cursorRing.style.top = e.clientY - 17.5 + 'px';
+            });
+
+            document.querySelectorAll('a, button, .btn, .service-card, .product-card').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursorRing.style.transform = 'scale(1.5)';
+                    cursorRing.style.borderColor = 'rgba(232, 135, 14, 0.8)';
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursorRing.style.transform = 'scale(1)';
+                    cursorRing.style.borderColor = 'rgba(232, 135, 14, 0.4)';
+                });
+            });
+        } else {
+            cursorDot.style.display = 'none';
+            cursorRing.style.display = 'none';
+        }
+
+        // ===== NAVBAR SCROLL =====
+        const navbar = document.getElementById('navbar');
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (window.scrollY > 400) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        // ===== MOBILE MENU =====
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.getElementById('hamburger');
+            const overlay = document.getElementById('navOverlay');
+
+            navLinks.classList.toggle('open');
+            hamburger.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+        }
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.getElementById('navLinks');
+                if (navLinks.classList.contains('open')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // ===== PAGE NAVIGATION =====
+        function showPage(page) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(p => {
+                p.classList.remove('active');
+            });
+
+            // Show target page
+            const targetPage = document.getElementById('page-' + page);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            // Update nav active state
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            const activeLink = document.querySelector(`.nav-links a[href="#${page}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Re-trigger reveal animations
+            setTimeout(() => {
+                observeElements();
+            }, 100);
+        }
+
+        // ===== SCROLL REVEAL =====
+        function observeElements() {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            reveals.forEach(el => {
+                // Reset for re-observation on page switch
+                if (!el.classList.contains('visible')) {
+                    observer.observe(el);
+                }
+            });
+        }
+
+        // Initial observation
+        document.addEventListener('DOMContentLoaded', () => {
+            observeElements();
+        });
+
+        // ===== COUNTER ANIMATION =====
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter-number[data-target]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        const duration = 2000;
+                        const step = target / (duration / 16);
+                        let current = 0;
+
+                        const updateCounter = () => {
+                            current += step;
+                            if (current < target) {
+                                counter.textContent = Math.floor(current) + '+';
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target + '+';
+                            }
+                        };
+
+                        updateCounter();
+                        observer.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => observer.observe(counter));
+        }
+
+        animateCounters();
+
+        // Hero stat counters
+        function animateHeroStats() {
+            const stats = document.querySelectorAll('.hero-stat-number[data-count]');
+            stats.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+
+                const update = () => {
+                    current += step;
+                    if (current < target) {
+                        stat.textContent = Math.floor(current) + '+';
+                        requestAnimationFrame(update);
+                    } else {
+                        stat.textContent = target + '+';
+                    }
+                };
+
+                setTimeout(update, 1800);
+            });
+        }
+
+        animateHeroStats();
+
+        // ===== SCROLL TO TOP =====
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ===== FORM HANDLERS =====
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('contactForm');
+            const success = document.getElementById('contactSuccess');
+            form.style.display = 'none';
+            success.classList.add('show');
+
+            setTimeout(() => {
+                form.style.display = 'block';
+                form.reset();
+                success.classList.remove('show');
+            }, 5000);
+        }
+
+        function handleCareerSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('careerForm');
+            const success = document.getElementById('careerSuccess');
+            form.style.display = 'none';
+            success.classList.add('show');
+
+            setTimeout(() => {
+                form.style.display = 'block';
+                form.reset();
+                success.classList.remove('show');
+            }, 5000);
+        }
+
+        // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // ===== TYPING EFFECT FOR HERO (subtle) =====
+        const heroTitle = document.querySelector('.hero h1');
+        if (heroTitle) {
+            heroTitle.style.opacity = '0';
+            setTimeout(() => {
+                heroTitle.style.opacity = '1';
+                heroTitle.style.transition = 'opacity 0.8s ease';
+            }, 500);
+        }
+
+        // ===== PARALLAX ON HERO ORBS =====
+        if (window.innerWidth > 768) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY;
+                const orbs = document.querySelectorAll('.hero-gradient-orb');
+                orbs.forEach((orb, i) => {
+                    orb.style.transform = `translateY(${scrolled * (0.1 + i * 0.05)}px)`;
+                });
+            });
+        }
+
+        // ===== SERVICE CARD TILT EFFECT =====
+        if (window.innerWidth > 768) {
+            document.querySelectorAll('.service-card, .product-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 20;
+                    const rotateY = (centerX - x) / 20;
+
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+                });
+            });
+        }
+    </script>
 </body>
 </html>
