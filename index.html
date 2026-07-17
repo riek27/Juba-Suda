@@ -198,6 +198,109 @@
             border: 1px solid rgba(255, 255, 255, 0.22);
         }
 
+        /* ============================================ */
+/* SOCIAL ICONS - CONTACT SECTION              */
+/* ============================================ */
+
+/* Contact section social icons */
+.social-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-icon i {
+    /* Ensure Lucide icons render at correct size */
+    width: 16px;
+    height: 16px;
+    stroke-width: 2px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover i {
+    transform: scale(1.15);
+}
+
+/* Brand-specific hover colors (fallback if inline styles don't apply) */
+.social-icon:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ============================================ */
+/* FOOTER SOCIAL ICONS                         */
+/* ============================================ */
+
+.footer-social {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.footer-social i {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social:hover i {
+    transform: scale(1.2);
+}
+
+/* ============================================ */
+/* CONTACT INFO ICONS                          */
+/* ============================================ */
+
+/* Ensure contact detail icons are visible */
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-icon i {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2px;
+}
+
+/* ============================================ */
+/* FORM ELEMENTS                               */
+/* ============================================ */
+
+/* Smooth focus transitions */
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(10, 61, 92, 0.08);
+}
+
+/* Placeholder styling */
+::placeholder {
+    opacity: 0.4;
+}
+
+/* ============================================ */
+/* LUCIDE ICONS GLOBAL FIX                     */
+/* ============================================ */
+
+/* Force Lucide icons to be visible */
+[data-lucide] {
+    display: block;
+    flex-shrink: 0;
+}
+
+/* Ensure all icons have a minimum visible size */
+i[data-lucide] svg {
+    width: 100%;
+    height: 100%;
+}
+
         /* Text gradient */
         .text-gradient {
             background: linear-gradient(135deg, #D4A017 0%, #E8B830 50%, #F0C850 100%);
@@ -712,169 +815,199 @@
         </div>
     </section>
 
-    <!-- SECTION 7: CONTACT -->
-    <section id="contact" class="py-24 md:py-32 bg-white relative overflow-hidden">
-        <div class="container mx-auto px-5 md:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
-                <div class="reveal-left">
-                    <span class="text-secondary font-body font-semibold tracking-widest text-xs uppercase mb-3 block">Get In Touch</span>
-                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-dark mb-6 tracking-tight">Partner With Us for a Better Future</h2>
-                    <p class="font-body text-dark/60 text-base leading-relaxed mb-10">
-                        Whether you are a donor, volunteer, or community leader, we welcome your collaboration. Reach out to learn how we can work together to create lasting impact in South Sudan.
-                    </p>
+   <!-- SECTION 7: CONTACT -->
+<section id="contact" class="py-24 md:py-32 bg-white relative overflow-hidden">
+    <!-- Background decorative elements -->
+    <div class="absolute top-20 right-0 w-80 h-80 bg-primary/3 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 left-10 w-64 h-64 bg-accent/5 rounded-full blur-3xl"></div>
 
-                    <div class="space-y-5 mb-10">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-primary/8 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="phone" class="w-5.5 h-5.5 text-primary"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-heading font-semibold text-dark mb-1 text-sm">Phone</h4>
-                                <p class="font-body text-dark/60 text-sm">0919365067</p>
-                            </div>
+    <div class="container mx-auto px-5 md:px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+            <!-- Left Column - Contact Info -->
+            <div class="reveal-left">
+                <span class="inline-block text-secondary font-body font-semibold tracking-widest text-xs uppercase mb-3 bg-secondary/8 px-3 py-1.5 rounded-full">Get In Touch</span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-dark mb-6 tracking-tight leading-tight">
+                    Partner With Us for a Better Future
+                </h2>
+                <p class="font-body text-dark/60 text-base leading-relaxed mb-10 max-w-md">
+                    Whether you are a donor, volunteer, or community leader, we welcome your collaboration. Reach out to learn how we can work together to create lasting impact in South Sudan.
+                </p>
+
+                <!-- Contact Details -->
+                <div class="space-y-6 mb-10">
+                    <!-- Phone -->
+                    <div class="flex items-start gap-4 group cursor-pointer">
+                        <div class="w-12 h-12 bg-primary/8 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-all duration-300">
+                            <i data-lucide="phone" class="w-5 h-5 text-primary group-hover:text-white transition-colors duration-300"></i>
                         </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-primary/8 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="mail" class="w-5.5 h-5.5 text-primary"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-heading font-semibold text-dark mb-1 text-sm">Email</h4>
-                                <p class="font-body text-dark/60 text-sm">contact@pdo-ss.org</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-primary/8 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="map-pin" class="w-5.5 h-5.5 text-primary"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-heading font-semibold text-dark mb-1 text-sm">Location</h4>
-                                <p class="font-body text-dark/60 text-sm">Juba, South Sudan</p>
-                            </div>
+                        <div>
+                            <h4 class="font-heading font-semibold text-dark mb-1 text-sm">Phone</h4>
+                            <p class="font-body text-dark/60 text-sm">0919365067</p>
                         </div>
                     </div>
-<!-- FIXED: Social Icons with valid Tailwind sizes -->
-<div class="flex gap-3">
-    <a href="#" class="w-11 h-11 bg-light-alt border border-slate-200 rounded-full flex items-center justify-center text-dark/45 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm">
-        <i data-lucide="facebook" class="w-4 h-4"></i>
-    </a>
-    <a href="#" class="w-11 h-11 bg-light-alt border border-slate-200 rounded-full flex items-center justify-center text-dark/45 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm">
-        <i data-lucide="twitter" class="w-4 h-4"></i>
-    </a>
-    <a href="#" class="w-11 h-11 bg-light-alt border border-slate-200 rounded-full flex items-center justify-center text-dark/45 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm">
-        <i data-lucide="linkedin" class="w-4 h-4"></i>
-    </a>
-    <a href="#" class="w-11 h-11 bg-light-alt border border-slate-200 rounded-full flex items-center justify-center text-dark/45 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm">
-        <i data-lucide="instagram" class="w-4 h-4"></i>
-    </a>
-</div>
 
-                <div class="reveal-right bg-light-alt/70 backdrop-blur-xl border border-slate-100/60 rounded-4xl p-8 md:p-10 shadow-soft-lg">
-                    <h3 class="font-heading font-bold text-2xl text-dark mb-7">Send us a Message</h3>
-                    <form class="space-y-5" onsubmit="event.preventDefault(); alert('Thank you for your message! We will get back to you soon.');">
-                        <div class="grid sm:grid-cols-2 gap-5">
-                            <div class="space-y-2">
-                                <label class="font-body text-xs font-semibold text-dark/70 uppercase tracking-wider">Full Name</label>
-                                <input type="text" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 font-body text-dark placeholder:text-dark/35 focus:outline-none focus:ring-2 focus:ring-primary/15 focus:border-primary transition-all text-sm" placeholder="John Doe" required>
-                            </div>
-                            <div class="space-y-2">
-                                <label class="font-body text-xs font-semibold text-dark/70 uppercase tracking-wider">Email Address</label>
-                                <input type="email" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 font-body text-dark placeholder:text-dark/35 focus:outline-none focus:ring-2 focus:ring-primary/15 focus:border-primary transition-all text-sm" placeholder="john@example.com" required>
-                            </div>
+                    <!-- Email -->
+                    <div class="flex items-start gap-4 group cursor-pointer">
+                        <div class="w-12 h-12 bg-primary/8 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-all duration-300">
+                            <i data-lucide="mail" class="w-5 h-5 text-primary group-hover:text-white transition-colors duration-300"></i>
                         </div>
-                        <div class="space-y-2">
-                            <label class="font-body text-xs font-semibold text-dark/70 uppercase tracking-wider">Subject</label>
-                            <input type="text" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 font-body text-dark placeholder:text-dark/35 focus:outline-none focus:ring-2 focus:ring-primary/15 focus:border-primary transition-all text-sm" placeholder="Partnership Inquiry" required>
+                        <div>
+                            <h4 class="font-heading font-semibold text-dark mb-1 text-sm">Email</h4>
+                            <p class="font-body text-dark/60 text-sm">contact@pdo-ss.org</p>
                         </div>
-                        <div class="space-y-2">
-                            <label class="font-body text-xs font-semibold text-dark/70 uppercase tracking-wider">Message</label>
-                            <textarea rows="4" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 font-body text-dark placeholder:text-dark/35 focus:outline-none focus:ring-2 focus:ring-primary/15 focus:border-primary transition-all text-sm resize-none" placeholder="How can we collaborate?" required></textarea>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="flex items-start gap-4 group cursor-pointer">
+                        <div class="w-12 h-12 bg-primary/8 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-all duration-300">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-primary group-hover:text-white transition-colors duration-300"></i>
                         </div>
-                        <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-body font-semibold py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2.5 group text-sm">
-                            Send Message
-                            <i data-lucide="send" class="w-4.5 h-4.5 group-hover:translate-x-1 transition-transform duration-300"></i>
-                        </button>
-                    </form>
+                        <div>
+                            <h4 class="font-heading font-semibold text-dark mb-1 text-sm">Location</h4>
+                            <p class="font-body text-dark/60 text-sm">Juba, South Sudan</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-dark-soft text-white pt-20 pb-8">
-        <div class="container mx-auto px-5 md:px-8">
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
-                <div class="lg:col-span-1">
-                    <div class="flex items-center gap-3 mb-5">
-                        <img src="assets/podologo.jpg" alt="PDO Logo" class="w-10 h-10 rounded-lg object-cover shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <span class="hidden w-10 h-10 rounded-lg bg-accent items-center justify-center font-heading font-extrabold text-white text-lg shadow-md" style="display:none;">P</span>
-                        <span class="font-heading font-extrabold text-2xl text-white">PDO</span>
-                    </div>
-                    <p class="font-body text-white/50 leading-relaxed mb-6 text-sm">
-                        Peace and Development Organization works alongside communities across South Sudan to promote peace, strengthen resilience, and create sustainable development.
-                    </p>
+                <!-- Social Icons - FIXED & ENHANCED -->
+                <div>
+                    <p class="font-body text-dark/50 text-xs font-semibold uppercase tracking-wider mb-4">Follow Us</p>
                     <div class="flex gap-3">
-                        <a href="#" class="w-9 h-9 bg-white/8 rounded-full flex items-center justify-center text-white/50 hover:bg-accent hover:text-white transition-all duration-300">
+                        <!-- Facebook -->
+                        <a href="#" aria-label="Facebook" class="social-icon w-11 h-11 bg-light-alt border border-slate-200 rounded-full flex items-center justify-center text-dark/50 hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5">
                             <i data-lucide="facebook" class="w-4 h-4"></i>
                         </a>
-                        <a href="#" class="w-9 h-9 bg-white/8 rounded-full flex items-center justify-center text-white/50 hover:bg-accent hover:text-white transition-all duration-300">
+                        <!-- Twitter -->
+                        <a href="#" aria-label="Twitter" class="social-icon w-11 h-11 bg-light-alt border border-slate-200 rounded-full flex items-center justify-center text-dark/50 hover:bg-[#1DA1F2] hover:text-white hover:border-[#1DA1F2] transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5">
                             <i data-lucide="twitter" class="w-4 h-4"></i>
                         </a>
-                        <a href="#" class="w-9 h-9 bg-white/8 rounded-full flex items-center justify-center text-white/50 hover:bg-accent hover:text-white transition-all duration-300">
+                        <!-- LinkedIn -->
+                        <a href="#" aria-label="LinkedIn" class="social-icon w-11 h-11 bg-light-alt border border-slate-200 rounded-full flex items-center justify-center text-dark/50 hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5">
                             <i data-lucide="linkedin" class="w-4 h-4"></i>
                         </a>
-                        <a href="#" class="w-9 h-9 bg-white/8 rounded-full flex items-center justify-center text-white/50 hover:bg-accent hover:text-white transition-all duration-300">
+                        <!-- Instagram -->
+                        <a href="#" aria-label="Instagram" class="social-icon w-11 h-11 bg-light-alt border border-slate-200 rounded-full flex items-center justify-center text-dark/50 hover:bg-[#E4405F] hover:text-white hover:border-[#E4405F] transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5">
                             <i data-lucide="instagram" class="w-4 h-4"></i>
                         </a>
                     </div>
                 </div>
-
-                <div>
-                    <h4 class="font-heading font-bold text-base mb-5 text-white">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#about" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">About Us</a></li>
-                        <li><a href="#programs" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Our Programs</a></li>
-                        <li><a href="#projects" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Projects</a></li>
-                        <li><a href="#impact" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Impact</a></li>
-                        <li><a href="#news" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">News & Stories</a></li>
-                        <li><a href="#contact" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-heading font-bold text-base mb-5 text-white">Programs</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Peacebuilding</a></li>
-                        <li><a href="#" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Disaster Risk Reduction</a></li>
-                        <li><a href="#" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Community Development</a></li>
-                        <li><a href="#" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Livelihood Support</a></li>
-                        <li><a href="#" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Youth Empowerment</a></li>
-                        <li><a href="#" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Women's Empowerment</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-heading font-bold text-base mb-5 text-white">Newsletter</h4>
-                    <p class="font-body text-white/50 mb-4 text-sm">Subscribe to receive updates on our latest projects and impact stories.</p>
-                    <form class="flex gap-2" onsubmit="event.preventDefault();">
-                        <input type="email" placeholder="Your email" class="flex-1 bg-white/8 border border-white/10 rounded-xl px-4 py-2.5 font-body text-sm text-white placeholder:text-white/35 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/40 transition-all" required>
-                        <button type="submit" class="bg-accent hover:bg-accent-light text-white px-4 py-2.5 rounded-xl font-body font-semibold transition-all duration-300 flex-shrink-0">
-                            <i data-lucide="arrow-right" class="w-4.5 h-4.5"></i>
-                        </button>
-                    </form>
-                </div>
             </div>
 
-            <div class="border-t border-white/8 pt-7 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <p class="font-body text-white/35 text-xs">
-                    &copy; <span id="year"></span> Peace and Development Organization (PDO). All rights reserved.
-                </p>
-                <div class="flex gap-5">
-                    <a href="#" class="font-body text-white/35 text-xs hover:text-white/70 transition-colors">Privacy Policy</a>
-                    <a href="#" class="font-body text-white/35 text-xs hover:text-white/70 transition-colors">Terms of Service</a>
-                </div>
+            <!-- Right Column - Contact Form -->
+            <div class="reveal-right bg-light-alt/80 backdrop-blur-xl border border-slate-100/60 rounded-4xl p-8 md:p-10 shadow-soft-lg">
+                <h3 class="font-heading font-bold text-2xl text-dark mb-2">Send us a Message</h3>
+                <p class="font-body text-dark/50 text-sm mb-7">We'll get back to you within 48 hours.</p>
+                <form class="space-y-5" onsubmit="event.preventDefault(); alert('Thank you for your message! We will get back to you soon.');">
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div class="space-y-2">
+                            <label class="font-body text-xs font-semibold text-dark/70 uppercase tracking-wider">Full Name</label>
+                            <input type="text" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 font-body text-dark placeholder:text-dark/35 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm" placeholder="John Doe" required>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="font-body text-xs font-semibold text-dark/70 uppercase tracking-wider">Email Address</label>
+                            <input type="email" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 font-body text-dark placeholder:text-dark/35 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-body text-xs font-semibold text-dark/70 uppercase tracking-wider">Subject</label>
+                        <input type="text" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 font-body text-dark placeholder:text-dark/35 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm" placeholder="Partnership Inquiry" required>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-body text-xs font-semibold text-dark/70 uppercase tracking-wider">Message</label>
+                        <textarea rows="4" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 font-body text-dark placeholder:text-dark/35 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm resize-none" placeholder="How can we collaborate?" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-body font-semibold py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group text-sm hover:-translate-y-0.5">
+                        Send Message
+                        <i data-lucide="send" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </button>
+                </form>
             </div>
         </div>
-    </footer>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark-soft text-white pt-20 pb-8">
+    <div class="container mx-auto px-5 md:px-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+            <!-- Brand Column -->
+            <div class="lg:col-span-1">
+                <div class="flex items-center gap-3 mb-5">
+                    <img src="assets/podologo.jpg" alt="PDO Logo" class="w-10 h-10 rounded-lg object-cover shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <span class="hidden w-10 h-10 rounded-lg bg-accent items-center justify-center font-heading font-extrabold text-white text-lg shadow-md" style="display:none;">P</span>
+                    <span class="font-heading font-extrabold text-2xl text-white">PDO</span>
+                </div>
+                <p class="font-body text-white/50 leading-relaxed mb-6 text-sm">
+                    Peace and Development Organization works alongside communities across South Sudan to promote peace, strengthen resilience, and create sustainable development.
+                </p>
+                <!-- Footer Social Icons -->
+                <div class="flex gap-3">
+                    <a href="#" aria-label="Facebook" class="footer-social w-9 h-9 bg-white/8 rounded-full flex items-center justify-center text-white/50 hover:bg-[#1877F2] hover:text-white transition-all duration-300">
+                        <i data-lucide="facebook" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" aria-label="Twitter" class="footer-social w-9 h-9 bg-white/8 rounded-full flex items-center justify-center text-white/50 hover:bg-[#1DA1F2] hover:text-white transition-all duration-300">
+                        <i data-lucide="twitter" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn" class="footer-social w-9 h-9 bg-white/8 rounded-full flex items-center justify-center text-white/50 hover:bg-[#0A66C2] hover:text-white transition-all duration-300">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="footer-social w-9 h-9 bg-white/8 rounded-full flex items-center justify-center text-white/50 hover:bg-[#E4405F] hover:text-white transition-all duration-300">
+                        <i data-lucide="instagram" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="font-heading font-bold text-base mb-5 text-white">Quick Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="#about" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">About Us</a></li>
+                    <li><a href="#programs" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Our Programs</a></li>
+                    <li><a href="#projects" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Projects</a></li>
+                    <li><a href="#impact" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Impact</a></li>
+                    <li><a href="#news" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">News & Stories</a></li>
+                    <li><a href="#contact" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Programs -->
+            <div>
+                <h4 class="font-heading font-bold text-base mb-5 text-white">Programs</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Peacebuilding</a></li>
+                    <li><a href="#" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Disaster Risk Reduction</a></li>
+                    <li><a href="#" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Community Development</a></li>
+                    <li><a href="#" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Livelihood Support</a></li>
+                    <li><a href="#" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Youth Empowerment</a></li>
+                    <li><a href="#" class="font-body text-white/50 hover:text-accent-light transition-colors text-sm">Women's Empowerment</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div>
+                <h4 class="font-heading font-bold text-base mb-5 text-white">Newsletter</h4>
+                <p class="font-body text-white/50 mb-4 text-sm">Subscribe to receive updates on our latest projects and impact stories.</p>
+                <form class="flex gap-2" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Your email" class="flex-1 bg-white/8 border border-white/10 rounded-xl px-4 py-2.5 font-body text-sm text-white placeholder:text-white/35 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/40 transition-all" required>
+                    <button type="submit" class="bg-accent hover:bg-accent-light text-white px-4 py-2.5 rounded-xl font-body font-semibold transition-all duration-300 flex-shrink-0">
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/8 pt-7 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p class="font-body text-white/35 text-xs">
+                &copy; <span id="year"></span> Peace and Development Organization (PDO). All rights reserved.
+            </p>
+            <div class="flex gap-5">
+                <a href="#" class="font-body text-white/35 text-xs hover:text-white/70 transition-colors">Privacy Policy</a>
+                <a href="#" class="font-body text-white/35 text-xs hover:text-white/70 transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <!-- JavaScript -->
     <script>
